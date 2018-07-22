@@ -1,0 +1,10 @@
+
+authenticate 
+
+http://localhost:8082/jersyxml/authservice/authenticate/loginuser
+
+{
+ "username":"namdevrock",
+ "password":123
+}
+
