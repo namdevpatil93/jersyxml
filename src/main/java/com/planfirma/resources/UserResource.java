@@ -11,20 +11,17 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.planfirma.service.UserService;
+import com.planfirma.service.impl.UserServiceImpl;
 import com.planfirma.utility.ErrorMessageBuilder;
 
 @Component
 @Path("/user")
 public class UserResource 
 {
-
-	@Autowired
-	private UserService userService;
-	
+	private UserService userService=new UserServiceImpl();
 	
 	@Path("/getuserdetails/{userid}")
 	@POST
@@ -43,7 +40,5 @@ public class UserResource
 			res=Response.status(Status.INTERNAL_SERVER_ERROR).entity(ErrorMessageBuilder.buildJsonMessage(e)).build();
 		}
 		return res;
-		
 	}
-	
 }

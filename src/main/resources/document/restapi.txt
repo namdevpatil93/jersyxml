@@ -8,3 +8,6 @@ http://localhost:8082/jersyxml/authservice/authenticate/loginuser
  "password":123
 }
 
+it will generate token bmFtZGV2cGF0aWw5M0BnbWFpbC5jb206bnVsbDoxNTMyMjU1NjkwODE0
+
+http://localhost:8082/jersyxml/services/user/getuserdetails/1

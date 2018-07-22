@@ -3,7 +3,6 @@ package com.planfirma.filter;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Response;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.planfirma.dto.ResponseDto;
@@ -14,12 +13,14 @@ import com.sun.jersey.spi.container.ContainerRequestFilter;
 @Service
 public class JsonRequestFilter   implements ContainerRequestFilter  {
 
-	@Autowired
-	private TokenUtility tokenUtility;
+	private TokenUtility tokenUtility=new TokenUtility();
+
 	public ContainerRequest filter(ContainerRequest request) 
 	{
 		String token=request.getHeaderValue("usertoken");
 	//	List<PathSegment> segments1=request.getPathSegments();
+	
+		System.out.println("in filter ");
 		
 		ResponseDto responsedto=new ResponseDto();
 		

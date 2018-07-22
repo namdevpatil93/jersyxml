@@ -28,22 +28,20 @@ com.sun.jersey.spi.container.servlet.ServletContainer
 
 <init-param>
 <param-name>com.sun.jersey.spi.container.ContainerRequestFilters</param-name>
-<param-value>com.sun.jersey.api.container.filter.LoggingFilter;com.test.filter.JsonRequestFilter</param-value>
+<param-value>com.sun.jersey.api.container.filter.LoggingFilter;com.planfirma.filter.JsonRequestFilter</param-value>
 </init-param>
 <init-param>
 <param-name>com.sun.jersey.spi.container.ContainerResponseFilters</param-name>
-<param-value>com.sun.jersey.api.container.filter.LoggingFilter;com.test.filter.JsonpResponseFilter</param-value>
+<param-value>com.sun.jersey.api.container.filter.LoggingFilter;com.planfirma.filter.JsonpResponseFilter</param-value>
 </init-param>
 <load-on-startup>1</load-on-startup>
 </servlet>
 
   
-  
    <servlet-mapping>
     <servlet-name>jersey-services</servlet-name>
     <url-pattern>/services/*</url-pattern>
   </servlet-mapping>
- 
  
  	  <servlet>
  	      <servlet-name>authservice</servlet-name>
@@ -61,9 +59,6 @@ com.sun.jersey.spi.container.servlet.ServletContainer
     <servlet-name>authservice</servlet-name>
     <url-pattern>/authservice/*</url-pattern>
   </servlet-mapping>
-  
- 
-
   
   	 <filter>
 		<filter-name>CORSFilter</filter-name>
